@@ -1,0 +1,53 @@
+#######################################################################################################################################################
+# Perform the below commands based on your question server, user name and other details might differ .So please read task carefully before executing. #
+#######################################################################################################################################################
+
+#Step 1: ssh to the asked server# 
+
+thor@jump_host /$ ssh tony@stapp01
+The authenticity of host 'stapp01 (172.16.238.10)' can't be established.
+ECDSA key fingerprint is SHA256:RIRt2SqEVQ3yKDQ+cX5QLPw7mJNJhXUcT5Dpsy4GU1U.
+ECDSA key fingerprint is MD5:bd:f7:14:9e:c0:fd:41:0d:2d:e4:30:47:8a:34:35:ae.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'stapp01,172.16.238.10' (ECDSA) to the list of known hosts.
+tony@stapp01's password:
+
+[tony@stapp01 ~]$ sudo su -
+ We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+     #1) Respect the privacy of others.
+     #2) Think before you type.
+     #3) With great power comes great responsibility.
+ [sudo] password for tony:
+ 
+[root@stapp01 ~]
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Step 2: Listing file where permission file exist "xfusioncorp.sh" # 
+
+[root@stapp01 ~]# ls -ltr /tmp/xfusioncorp.sh
+---------- 1 root root 40 Jun 17 09:02 /tmp/xfusioncorp.sh  
+[root@stapp01 ~]#
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Step 3: changing mode for other users (Read & execute) # 
+
+[root@stapp01 ~]# chmod o+rx /tmp/xfusioncorp.sh 
+[root@stapp01 ~]#
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Step 4: verifying permissions changes on "xfusioncorp.sh" # 
+
+[root@stapp01 ~]#ls -lrt /tmp/xfusioncorp.sh
+-------r-x 1 root root 40 Jun 17 09:25 /tmp/xfusioncorp.sh 
+[root@stapp01 ~]# exit
+logout
+
+[tony@stapp01 ~]$ sh /tmp/xfusioncorp.sh
+Welcome To KodeKloud
+[tony@stapp01 ~]$
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+#Step 5: Click on Finish&Confirm to complete the task successful# 
+
+
